@@ -52,7 +52,8 @@
       "Bash(curl -sL -w \"HTTP %{http_code} | final URL: %{url_effective}\\\\n\" -o public/photos/hero-wheat-field.jpg \"https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=2000&fm=jpg&q=80\")",
       "Bash(curl -sL -o public/photos/hero-wheat-field.jpg \"https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=2000&fm=jpg&q=80\")",
       "Bash(git commit -m 'feat\\(assets\\): add cropped app screens \\(7\\) + hero photo placeholder *)",
-      "Bash(git commit -m 'feat\\(sections\\): add final-cta, faq, footer; assemble homepage *)"
+      "Bash(git commit -m 'feat\\(sections\\): add final-cta, faq, footer; assemble homepage *)",
+      "Bash(git commit -m 'feat\\(pages\\): add /privacy, /terms, /support with page-shell layout *)"
     ],
     "additionalDirectories": [
       "/Users/oleksiimotornyi/.claude/projects/-Users-oleksiimotornyi-Documents-Projects-Grano-landing/memory"
