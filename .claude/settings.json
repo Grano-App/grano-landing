@@ -36,7 +36,22 @@
       "Bash(git commit -m 'fix\\(brand\\): simplify logo SVG to uniform GRAN + leaf-o *)",
       "Bash(git stash *)",
       "Bash(npm test *)",
-      "Bash(git commit -m 'feat\\(content\\): add typed content modules with completeness tests *)"
+      "Bash(git commit -m 'feat\\(content\\): add typed content modules with completeness tests *)",
+      "Bash(grep -E \"\\\\.\\(tsx\\)$\")",
+      "Bash(awk '{print $5, $9, $10, $11, $12, $13}')",
+      "Bash(sips --version)",
+      "Bash(mkdir -p public/screens public/photos)",
+      "Bash(sips -Z 640 \"Screenshot 2026-04-21 at 23.15.11.png\" --out ../public/screens/home.png)",
+      "Bash(sips -Z 640 \"Screenshot 2026-04-21 at 23.16.49.png\" --out ../public/screens/fields-list.png)",
+      "Bash(sips -Z 640 \"Screenshot 2026-04-21 at 23.16.56.png\" --out ../public/screens/field-detail.png)",
+      "Bash(sips -Z 640 \"Screenshot 2026-04-21 at 23.15.57.png\" --out ../public/screens/shop-catalog.png)",
+      "Bash(sips -Z 640 \"Screenshot 2026-04-21 at 23.16.20.png\" --out ../public/screens/cart.png)",
+      "Bash(sips -Z 640 \"Screenshot 2026-04-21 at 23.16.35.png\" --out ../public/screens/ai-result.png)",
+      "Bash(sips -Z 640 \"Screenshot 2026-04-21 at 23.15.11.png\" --out ../public/screens/weather-card.png)",
+      "Bash(curl -sL -o public/photos/hero-wheat-field.jpg \"https://images.unsplash.com/photo-1591904968693-9a3b35f3614b?w=2000&fm=jpg&q=80\")",
+      "Bash(curl -sL -w \"HTTP %{http_code} | final URL: %{url_effective}\\\\n\" -o public/photos/hero-wheat-field.jpg \"https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=2000&fm=jpg&q=80\")",
+      "Bash(curl -sL -o public/photos/hero-wheat-field.jpg \"https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=2000&fm=jpg&q=80\")",
+      "Bash(git commit -m 'feat\\(assets\\): add cropped app screens \\(7\\) + hero photo placeholder *)"
     ],
     "additionalDirectories": [
       "/Users/oleksiimotornyi/.claude/projects/-Users-oleksiimotornyi-Documents-Projects-Grano-landing/memory"
