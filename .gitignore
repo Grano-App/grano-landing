@@ -28,3 +28,9 @@ test-results/
 # Design source (kept locally, not tracked)
 Дизайн/
 Screenshot*.png
+
+# Lighthouse reports
+lighthouse-*.html
+lighthouse-*.json
+lighthouse-*.report.html
+lighthouse-*.report.json

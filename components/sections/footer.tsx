@@ -18,8 +18,8 @@ export function Footer() {
           </div>
           {footerColumns.map((col) => (
             <div key={col.title} className="flex flex-col gap-3">
-              <h4 className="text-sm font-bold text-white">{col.title}</h4>
-              <ul className="flex flex-col gap-2">
+              <p className="text-sm font-bold text-white">{col.title}</p>
+              <ul className="flex flex-col gap-1">
                 {col.links.map((link) => (
                   <li key={link.href}>
                     {"external" in link && link.external ? (
@@ -27,14 +27,14 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-sm text-white/70 hover:text-white"
+                        className="block py-1 text-sm text-white/70 hover:text-white"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-sm text-white/70 hover:text-white"
+                        className="block py-1 text-sm text-white/70 hover:text-white"
                       >
                         {link.label}
                       </Link>
