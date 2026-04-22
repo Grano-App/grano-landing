@@ -27,7 +27,7 @@ export function HowItWorks() {
                 className="relative flex flex-col items-center gap-4 text-center"
               >
                 <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-green-50">
-                  <span className="absolute -top-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-green-500 text-sm font-bold text-white">
+                  <span className="absolute -top-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-green-700 text-sm font-bold text-white">
                     {step.index}
                   </span>
                   <Icon className="h-10 w-10 text-green-700" aria-hidden="true" />

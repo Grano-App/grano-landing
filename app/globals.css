@@ -14,7 +14,8 @@
   --color-green-50:  #EEF6E4;
   --color-green-500: #85C059;
   --color-green-600: #6FA847;
-  --color-green-700: #3A8E3E;
+  --color-green-700: #2C6B30; /* darkened: 5.8:1 on green-50, 6.5:1 on white — WCAG AA */
+  --color-green-800: #235826; /* button hover/active — 8.4:1 on white */
 
   /* Neutrals */
   --color-cream-50: #FAF8F3;
@@ -26,7 +27,7 @@
   /* Semantic */
   --color-danger:     #D44040;
   --color-danger-bg:  #F7DEE0;
-  --color-warning:    #E7962C;
+  --color-warning:    #7A4800; /* darkened for WCAG AA contrast on warning-bg */
   --color-warning-bg: #FCE7CE;
 
   /* Type scale (desktop) */
