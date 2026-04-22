@@ -53,7 +53,15 @@
       "Bash(curl -sL -o public/photos/hero-wheat-field.jpg \"https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=2000&fm=jpg&q=80\")",
       "Bash(git commit -m 'feat\\(assets\\): add cropped app screens \\(7\\) + hero photo placeholder *)",
       "Bash(git commit -m 'feat\\(sections\\): add final-cta, faq, footer; assemble homepage *)",
-      "Bash(git commit -m 'feat\\(pages\\): add /privacy, /terms, /support with page-shell layout *)"
+      "Bash(git commit -m 'feat\\(pages\\): add /privacy, /terms, /support with page-shell layout *)",
+      "Bash(curl -s http://localhost:3000/sitemap.xml)",
+      "Bash(curl -s http://localhost:3000/robots.txt)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(pkill -9 -f \"node.*next\")",
+      "Read(//private/tmp/**)",
+      "Bash(pkill -9 -f \"^node\")",
+      "Bash(pkill -9 -f \"node\")",
+      "Bash(git commit -m 'feat\\(seo\\): add metadata defaults, sitemap, robots, JSON-LD MobileApplication schema *)"
     ],
     "additionalDirectories": [
       "/Users/oleksiimotornyi/.claude/projects/-Users-oleksiimotornyi-Documents-Projects-Grano-landing/memory"

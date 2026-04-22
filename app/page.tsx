@@ -10,9 +10,28 @@ import { Footer } from "@/components/sections/footer";
 import { OrnDivider } from "@/components/ui/orn-divider";
 import { deepDives } from "@/content/deep-dives";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: "Grano",
+  operatingSystem: "iOS, Android",
+  applicationCategory: "LifestyleApplication",
+  description:
+    "Мобільний додаток для українських фермерів. Управляйте полями, діагностуйте хвороби рослин, замовляйте насіння.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "UAH",
+  },
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main>
         <Hero />
