@@ -21,7 +21,22 @@
       "Bash(git commit -m 'chore: initialize Next.js 15 + Tailwind v4 + TS scaffold *)",
       "Bash(git commit -m 'docs: swap display font e-Ukraine Head -> Unbounded *)",
       "Bash(git commit -m 'feat\\(fonts\\): wire Comfortaa \\(body\\) + Unbounded \\(display\\) via next/font/google *)",
-      "Bash(git commit -m 'feat\\(theme\\): add full Tailwind v4 token system \\(colors, type, radii, shadows\\) *)"
+      "Bash(git commit -m 'feat\\(theme\\): add full Tailwind v4 token system \\(colors, type, radii, shadows\\) *)",
+      "Bash(node -e ' *)",
+      "Bash(npm start *)",
+      "Bash(curl -sI http://localhost:3000/icon)",
+      "Bash(curl -sI http://localhost:3000/apple-icon)",
+      "Bash(curl -sI http://localhost:3000/opengraph-image)",
+      "Bash(pkill -f \"next start\")",
+      "Bash(npx next *)",
+      "Bash(curl -sI http://localhost:3001/icon)",
+      "Bash(curl -sI http://localhost:3001/apple-icon)",
+      "Bash(curl -sI http://localhost:3001/opengraph-image)",
+      "Bash(git commit -m ' *)",
+      "Bash(git commit -m 'fix\\(brand\\): simplify logo SVG to uniform GRAN + leaf-o *)",
+      "Bash(git stash *)",
+      "Bash(npm test *)",
+      "Bash(git commit -m 'feat\\(content\\): add typed content modules with completeness tests *)"
     ],
     "additionalDirectories": [
       "/Users/oleksiimotornyi/.claude/projects/-Users-oleksiimotornyi-Documents-Projects-Grano-landing/memory"
