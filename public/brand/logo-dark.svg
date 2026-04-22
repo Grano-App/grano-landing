@@ -1,20 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 72" role="img" aria-label="Grano">
-  <!-- Wordmark: "G" large + "RAN" small-caps style — white for dark backgrounds -->
-  <!-- Large G -->
-  <text x="0" y="56" font-family="Comfortaa, sans-serif" font-size="56" font-weight="700" letter-spacing="-1" fill="#FFFFFF">G</text>
-  <!-- RAN in small-caps (slightly smaller, uppercase) -->
-  <text x="44" y="54" font-family="Comfortaa, sans-serif" font-size="44" font-weight="700" letter-spacing="1" fill="#FFFFFF">RAN</text>
-
-  <!-- Leaf-O: circle outline arc + two leaves inside -->
-  <g transform="translate(178, 8)">
-    <!-- Circle outline forming the "O" (open at top-right where leaves emerge) -->
-    <circle cx="32" cy="32" r="28" fill="none" stroke="#FFFFFF" stroke-width="4"
-      stroke-dasharray="135 40"
-      stroke-dashoffset="-10"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-label="Grano">
+  <!-- "GRAN" wordmark — white for dark backgrounds -->
+  <text x="0" y="50" font-family="Comfortaa, sans-serif" font-size="52" font-weight="700" letter-spacing="-1" fill="#FFFFFF">GRAN</text>
+  <!-- Leaf in place of "o" — pointed teardrop rotated 30° -->
+  <g transform="translate(174 10)">
+    <path
+      d="M26 6 C 40 8, 48 22, 42 36 C 36 48, 20 50, 10 42 C 4 36, 4 24, 10 16 C 15 10, 20 7, 26 6 Z"
+      fill="#85C059"
     />
-    <!-- Back leaf (darker green) — sweeping from bottom-left to upper-right -->
-    <path d="M10 44 C 14 30, 24 16, 40 8 C 46 5, 50 10, 46 16 C 38 28, 24 36, 10 44 Z" fill="#3A8E3E"/>
-    <!-- Front leaf (lighter green) — sweeping from center-bottom to upper-right -->
-    <path d="M18 50 C 20 36, 28 22, 44 12 C 50 8, 54 14, 50 20 C 42 32, 30 42, 18 50 Z" fill="#85C059"/>
+    <path
+      d="M12 36 C 20 28, 30 20, 40 10"
+      stroke="#3A8E3E"
+      stroke-width="2"
+      fill="none"
+      stroke-linecap="round"
+      opacity="0.7"
+    />
   </g>
 </svg>
