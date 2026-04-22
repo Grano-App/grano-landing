@@ -41,7 +41,7 @@
 
 **Variant B** — залишаємось у рамках бренду додатку (білий + sage-green + navy, rounded soft UI), додаємо субтильний **український акцент** через:
 
-1. **Display font** — e-Ukraine Head (трендовий український display, безкоштовний)
+1. **Display font** — Unbounded (трендовий український display, безкоштовний)
 2. **1px orn divider pattern** — тонка українська вишивка (horizontal SVG pattern, `currentColor` з 30% opacity) між секціями
 3. **Теплий off-white** `cream-50` (#FAF8F3) для чергування секцій — замість холодного сірого
 4. **Чесність** — реальна копірайт-мова для фермера, без маркетинг-води
@@ -106,10 +106,11 @@
 
 ### Fonts
 
-**Display** — **e-Ukraine Head** (Мінцифра, безкоштовний)
+**Display** — **Unbounded** (автор Олександр Шиманов, безкоштовний, Google Fonts)
 - H1, H2, великі numeric stats, CTA-headlines
 - Weights: Medium (500), Bold (700)
-- Source: [e-ukraine.in.ua](https://www.e-ukraine.in.ua/) → self-host WOFF2
+- Source: Google Fonts → self-host через `next/font/google` (subsets: `cyrillic`, `latin`)
+- Рішення прийнято 2026-04-22 замість e-Ukraine Head (сайт `e-ukraine.in.ua` недоступний).
 
 **Body / UI** — **Comfortaa** (Google Fonts, підтверджено що використовується в додатку)
 - H3, H4, підзаголовки, параграфи, кнопки, UI elements
@@ -122,9 +123,9 @@
 
 | Role | Size desktop | Line-height | Weight | Font |
 |------|--------------|-------------|--------|------|
-| H1 (hero) | 64px (4rem) | 1.05 (67px) | 700 | e-Ukraine Head |
-| H2 (section) | 48px (3rem) | 1.1 (53px) | 700 | e-Ukraine Head |
-| H3 (feature / dive) | 32px (2rem) | 1.2 (38px) | 700 | e-Ukraine Head |
+| H1 (hero) | 64px (4rem) | 1.05 (67px) | 700 | Unbounded |
+| H2 (section) | 48px (3rem) | 1.1 (53px) | 700 | Unbounded |
+| H3 (feature / dive) | 32px (2rem) | 1.2 (38px) | 700 | Unbounded |
 | H4 (card) | 22px (1.375rem) | 1.3 (28px) | 700 | Comfortaa |
 | Lede (hero sub, section sub) | 20px | 1.5 (30px) | 400 | Comfortaa |
 | Body | 16px | 1.5 (24px) | 400 | Comfortaa |
@@ -214,7 +215,7 @@ Container (1200px)
 │                     │                        │
 │ [badge "Для фермерів"]  │  [Фон: фото поля    │
 │                     │   пшениці, blur 40px,   │
-│ H1 (e-Ukraine Head):│   opacity 40%]          │
+│ H1 (Unbounded):│   opacity 40%]          │
 │ Твій цифровий       │                        │
 │ агроном             │   [iPhone mockup —      │
 │                     │    Home screen додатку] │
@@ -560,7 +561,7 @@ Tailwind default breakpoints:
 
 ## 15. Open Questions
 
-1. ~~**Дизайн-система Section 1 з Figma** — треба витягти точні токени.~~ **Вирішено (2026-04-22):** Figma MCP недоступний (free tier користувача). Кольори фіксуємо з поточної секції 4 (візуальна оцінка з PNG splash-ів), шрифт — Comfortaa (підтверджено користувачем). Display-шрифт e-Ukraine Head — вибір лендінгу, в додатку не використовується.
+1. ~~**Дизайн-система Section 1 з Figma** — треба витягти точні токени.~~ **Вирішено (2026-04-22):** Figma MCP недоступний (free tier користувача). Кольори фіксуємо з поточної секції 4 (візуальна оцінка з PNG splash-ів), шрифт — Comfortaa (підтверджено користувачем). Display-шрифт Unbounded — вибір лендінгу, в додатку не використовується.
 2. **Privacy Policy / Terms текст** — чекаємо юридичний контент від Grano. На MVP — placeholder з дисклеймером.
 3. **Real photos** — конкретні Unsplash URL підберемо при імплементації (2 фото).
 4. **Hosting** — Vercel чи Netlify? Рекомендую Vercel (native Next.js). Остаточно погодимо перед deploy.
@@ -589,7 +590,7 @@ Tailwind default breakpoints:
 | 4 | Aesthetic | Variant B — stay close to app brand + Ukrainian touch |
 | 5 | Domain | grano-app.com |
 | 6 | Divider accent | D — Ukrainian embroidery 1px SVG pattern |
-| 7 | Typography | B — e-Ukraine Head (display) + Comfortaa (body/UI) |
+| 7 | Typography | B — Unbounded (display) + Comfortaa (body/UI) |
 | 8 | Hero | C+twik — split text/mockup + wheat field blur bg |
 | 9 | Features 4 cards | C — icon + screen crop cards |
 | 10 | Deep-dive pattern | B — alternating + cream/white chergyyutsya |

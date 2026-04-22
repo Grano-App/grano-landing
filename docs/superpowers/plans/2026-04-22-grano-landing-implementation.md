@@ -363,29 +363,19 @@ cd /Users/oleksiimotornyi/Documents/Projects/Grano/landing && git add -A && git 
 
 ---
 
-## Task 2: Setup Fonts (Comfortaa + e-Ukraine Head)
+## Task 2: Setup Fonts (Comfortaa + Unbounded)
 
 **Files:**
 - Create: `lib/fonts.ts`
-- Create: `public/fonts/e-ukraine-head/` (two WOFF2 files to be downloaded manually)
 - Modify: `app/layout.tsx`, `app/globals.css`
 
-- [ ] **Step 1: Download e-Ukraine Head WOFF2 files manually**
+**Note (2026-04-22):** Display font changed from e-Ukraine Head to **Unbounded** — `e-ukraine.in.ua` is unavailable. Unbounded is a Ukrainian-designed open-source display face (by Olexandr Shymanov) with full Cyrillic support, loaded via `next/font/google` — no local files needed.
 
-The e-Ukraine font family is distributed as TTF/OTF from https://www.e-ukraine.in.ua/. Download the **Head** subfamily (NOT the regular "e-Ukraine"). Convert to WOFF2 using `fonttools` or https://transfonter.org/:
-
-Required files in `/Users/oleksiimotornyi/Documents/Projects/Grano/landing/public/fonts/e-ukraine-head/`:
-- `e-UkraineHead-Medium.woff2` (weight 500)
-- `e-UkraineHead-Bold.woff2` (weight 700)
-
-This is a human step. If the files are not available, STOP and ask the user to provide them before continuing. Do NOT proceed with a fallback font — the display font is a locked-in design decision.
-
-- [ ] **Step 2: Create `lib/fonts.ts`**
+- [ ] **Step 1: Create `lib/fonts.ts`**
 
 File: `/Users/oleksiimotornyi/Documents/Projects/Grano/landing/lib/fonts.ts`
 ```typescript
-import { Comfortaa } from "next/font/google";
-import localFont from "next/font/local";
+import { Comfortaa, Unbounded } from "next/font/google";
 
 export const comfortaa = Comfortaa({
   subsets: ["cyrillic", "latin"],
@@ -394,30 +384,20 @@ export const comfortaa = Comfortaa({
   variable: "--font-body",
 });
 
-export const eUkraineHead = localFont({
-  src: [
-    {
-      path: "../public/fonts/e-ukraine-head/e-UkraineHead-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/e-ukraine-head/e-UkraineHead-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+export const unbounded = Unbounded({
+  subsets: ["cyrillic", "latin"],
+  weight: ["500", "700"],
   display: "swap",
   variable: "--font-display",
 });
 ```
 
-- [ ] **Step 3: Apply fonts in `app/layout.tsx`**
+- [ ] **Step 2: Apply fonts in `app/layout.tsx`**
 
 File: `/Users/oleksiimotornyi/Documents/Projects/Grano/landing/app/layout.tsx`
 ```typescript
 import type { Metadata } from "next";
-import { comfortaa, eUkraineHead } from "@/lib/fonts";
+import { comfortaa, unbounded } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -428,14 +408,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="uk" className={`${comfortaa.variable} ${eUkraineHead.variable}`}>
+    <html lang="uk" className={`${comfortaa.variable} ${unbounded.variable}`}>
       <body className="font-body antialiased">{children}</body>
     </html>
   );
 }
 ```
 
-- [ ] **Step 4: Register font tokens in `app/globals.css`**
+- [ ] **Step 3: Register font tokens in `app/globals.css`**
 
 File: `/Users/oleksiimotornyi/Documents/Projects/Grano/landing/app/globals.css`
 ```css
@@ -451,7 +431,7 @@ html {
 }
 ```
 
-- [ ] **Step 5: Verify dev server renders fonts**
+- [ ] **Step 4: Verify dev server renders fonts**
 
 Run:
 ```bash
@@ -460,10 +440,10 @@ cd /Users/oleksiimotornyi/Documents/Projects/Grano/landing && npm run dev
 Open `http://localhost:3000`. Inspect the placeholder text — it should render in Comfortaa (rounded). Kill the server.
 Expected: no font-related console errors, text visibly Comfortaa.
 
-- [ ] **Step 6: Commit**
+- [ ] **Step 5: Commit**
 
 ```bash
-cd /Users/oleksiimotornyi/Documents/Projects/Grano/landing && git add -A && git commit -m "feat(fonts): wire Comfortaa (body) + e-Ukraine Head (display)"
+cd /Users/oleksiimotornyi/Documents/Projects/Grano/landing && git add -A && git commit -m "feat(fonts): wire Comfortaa (body) + Unbounded (display) via next/font/google"
 ```
 
 ---
