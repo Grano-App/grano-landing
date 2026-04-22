@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { comfortaa, unbounded } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -9,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="uk">
-      <body>{children}</body>
+    <html lang="uk" className={`${comfortaa.variable} ${unbounded.variable}`}>
+      <body className="font-body antialiased">{children}</body>
     </html>
   );
 }

@@ -18,7 +18,9 @@
       "Bash(npm run *)",
       "Bash(echo \"EXIT=$?\")",
       "Bash(git add *)",
-      "Bash(git commit -m 'chore: initialize Next.js 15 + Tailwind v4 + TS scaffold *)"
+      "Bash(git commit -m 'chore: initialize Next.js 15 + Tailwind v4 + TS scaffold *)",
+      "Bash(git commit -m 'docs: swap display font e-Ukraine Head -> Unbounded *)",
+      "Bash(git commit -m 'feat\\(fonts\\): wire Comfortaa \\(body\\) + Unbounded \\(display\\) via next/font/google *)"
     ],
     "additionalDirectories": [
       "/Users/oleksiimotornyi/.claude/projects/-Users-oleksiimotornyi-Documents-Projects-Grano-landing/memory"
