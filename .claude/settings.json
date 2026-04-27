@@ -61,7 +61,26 @@
       "Read(//private/tmp/**)",
       "Bash(pkill -9 -f \"^node\")",
       "Bash(pkill -9 -f \"node\")",
-      "Bash(git commit -m 'feat\\(seo\\): add metadata defaults, sitemap, robots, JSON-LD MobileApplication schema *)"
+      "Bash(git commit -m 'feat\\(seo\\): add metadata defaults, sitemap, robots, JSON-LD MobileApplication schema *)",
+      "Bash(npx playwright *)",
+      "Bash(npx --yes lighthouse@latest http://localhost:3000 --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --throttling-method=simulate --output=json --output=html --output-path=./lighthouse-mobile '--chrome-flags=--headless --no-sandbox' --quiet)",
+      "Bash(npx --yes lighthouse@latest http://localhost:3000 --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=json --output=html --output-path=./lighthouse-desktop '--chrome-flags=--headless --no-sandbox' --quiet)",
+      "Bash(node -e 'const j = require\\('\\\\''./__TRACKED_VAR__.report.json'\\\\''\\); const c = j.categories; const a = j.audits; console.log\\('\\\\''Performance:'\\\\'', Math.round\\(c.performance.score * 100\\)\\); console.log\\('\\\\''Accessibility:'\\\\'', Math.round\\(c.accessibility.score * 100\\)\\); console.log\\('\\\\''Best Practices:'\\\\'', Math.round\\(c['\\\\''best-practices'\\\\''].score * 100\\)\\); console.log\\('\\\\''SEO:'\\\\'', Math.round\\(c.seo.score * 100\\)\\); console.log\\('\\\\''LCP:'\\\\'', a['\\\\''largest-contentful-paint'\\\\''].displayValue\\); console.log\\('\\\\''CLS:'\\\\'', a['\\\\''cumulative-layout-shift'\\\\''].displayValue\\); console.log\\('\\\\''TBT:'\\\\'', a['\\\\''total-blocking-time'\\\\''].displayValue\\);')",
+      "Bash(sips -Z 1600 /Users/oleksiimotornyi/Documents/Projects/Grano/landing/public/photos/hero-wheat-field.jpg --out /Users/oleksiimotornyi/Documents/Projects/Grano/landing/public/photos/hero-wheat-field.jpg)",
+      "Bash(sips -Z 1200 --setProperty formatOptions 70 /Users/oleksiimotornyi/Documents/Projects/Grano/landing/public/photos/hero-wheat-field.jpg --out /Users/oleksiimotornyi/Documents/Projects/Grano/landing/public/photos/hero-wheat-field.jpg)",
+      "Bash(node -e \"const j = require\\('./lighthouse-mobile.report.json'\\); const c = j.categories; const a = j.audits; console.log\\('Performance:', Math.round\\(c.performance.score * 100\\)\\); console.log\\('Accessibility:', Math.round\\(c.accessibility.score * 100\\)\\); console.log\\('Best Practices:', Math.round\\(c['best-practices'].score * 100\\)\\); console.log\\('SEO:', Math.round\\(c.seo.score * 100\\)\\); console.log\\('LCP:', a['largest-contentful-paint'].displayValue\\); console.log\\('CLS:', a['cumulative-layout-shift'].displayValue\\); console.log\\('TBT:', a['total-blocking-time'].displayValue\\);\")",
+      "Bash(node -e \"const j = require\\('./lighthouse-mobile.report.json'\\); const a = j.audits; console.log\\('LCP element:', JSON.stringify\\(a['largest-contentful-paint-element']?.details?.items, null, 2\\)\\);\")",
+      "Bash(node -e \"const j = require\\('./lighthouse-mobile.report.json'\\); const a = j.audits; const lcp = a['largest-contentful-paint-element']; console.log\\('LCP element audit:', JSON.stringify\\(lcp, null, 2\\)\\);\")",
+      "Bash(node -e \"const j = require\\('./lighthouse-mobile.report.json'\\); console.log\\(Object.keys\\(j.audits\\).filter\\(k => k.includes\\('lcp'\\) || k.includes\\('largest'\\)\\)\\);\")",
+      "Bash(node -e \"const j = require\\('./lighthouse-mobile.report.json'\\); const a = j.audits; console.log\\('LCP breakdown:', JSON.stringify\\(a['lcp-breakdown-insight'], null, 2\\)\\);\")",
+      "Bash(node -e \"const j = require\\('./lighthouse-mobile.report.json'\\); const a = j.audits; const failed = Object.values\\(a\\).filter\\(audit => audit.score !== null && audit.score < 1 && audit.score !== undefined && audit.details && audit.details.type === 'table'\\); failed.forEach\\(f => { if \\(f.categories || j.categories.accessibility.auditRefs.find\\(r => r.id === f.id\\)\\) { console.log\\(f.id, f.score, f.displayValue\\); }}\\);\")",
+      "Bash(node -e \"const j = require\\('./lighthouse-mobile.report.json'\\); const a = j.audits; console.log\\('heading-order:', JSON.stringify\\(a['heading-order']?.details, null, 2\\)\\);\")",
+      "Bash(node -e \"const j = require\\('./lighthouse-mobile.report.json'\\); const a = j.audits; console.log\\('target-size:', JSON.stringify\\(a['target-size']?.details?.items?.slice\\(0,3\\), null, 2\\)\\);\")",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(python3 -c ' *)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill *)",
+      "Bash(npx eslint *)"
     ],
     "additionalDirectories": [
       "/Users/oleksiimotornyi/.claude/projects/-Users-oleksiimotornyi-Documents-Projects-Grano-landing/memory"
