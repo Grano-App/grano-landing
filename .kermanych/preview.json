@@ -1,5 +1,5 @@
 {
-  "setup": "npm install --no-audit --no-fund",
+  "setup": "npm install --no-audit --no-fund --no-save",
   "services": [
     {
       "name": "web",
