@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Grano — твій цифровий агроном";
+export const alt = "Grano — усе господарство в одній системі";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -37,7 +37,7 @@ export default function OgImage() {
             marginTop: 24,
           }}
         >
-          Твій цифровий агроном
+          Усе господарство в одній системі
         </div>
       </div>
     ),

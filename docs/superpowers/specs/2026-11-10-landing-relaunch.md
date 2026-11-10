@@ -161,5 +161,28 @@
 - `next build` не запускав: він перезаписує `.next` запущеного dev-сервера прев'ю. Що маршрут `/__design` у production віддає 404 — з коду (`notFound()` при `NODE_ENV=production`), не з білду.
 - Dev-сервер у цьому worktree не підхоплює зміни файлів без перезапуску прев'ю (`preview_start restart`).
 
+## 9. Етап 3 — нова головна, 2026-11-11
+
+### Changes
+- Головна `/` зібрана за прототипом: блоки `components/sections/{hero,pains,cycle,fuel,phone-feature,about,start,faq,lead-form}.tsx`, нові шапка й футер (також на `/support`, `/privacy`, `/terms`), тексти `content/landing.ts` і `content/faq.ts`. Прототип `/__design` видалено.
+- Кіт: `BrowserFrame`, `TextField`, `SelectField`, `CheckList`, `SectionTitle`; `Button` з `disabled`.
+- Заявка: `lib/lead.ts` (перевірка, номер → `+380…`, область зі списку, лише відомі UTM-ключі, поле-приманка для ботів, текст повідомлення) і `POST /api/lead` → Telegram `sendMessage` у `TELEGRAM_CHAT_ID` ботом з `TELEGRAM_BOT_TOKEN`. Без цих змінних — 503, форма показує номер для дзвінка.
+- Аналітика: GA4 при `NEXT_PUBLIC_GA_ID`; події `generate_lead`, `click_phone`, `click_store`. UTM першого входу зберігаються на сесію й ідуть із заявкою; посилання на Google Play мають `referrer` з `utm_content` за місцем значка.
+- Логотип Grano з grano.in.ua (`public/brand/grano-logo.png`, біла версія для темного фону); логотипи 13 виробників (`public/brands/`).
+- Видалено: старі секції (`feature-cards`, `deep-dive`, `how-it-works`, `final-cta`), `orn-divider`, `content/{features,deep-dives,how-it-works}.ts`, старі `public/screens/*.png`, фото героя, SVG «GRAN».
+- Метадані, OG-зображення й JSON-LD — під нове позиціонування.
+- `playwright.config.ts`: порт з `E2E_PORT` (за замовчуванням 3000).
+
+### Verification
+- `npm run typecheck` — без помилок.
+- `npx vitest run --maxWorkers=4 --minWorkers=1` — 4 файли, 28 тестів: перевірка заявки й номера, `POST /api/lead` (успіх, невалідні поля, не-JSON, приманка, 503 без налаштувань, 502 при відмові й недоступності Telegram).
+- `E2E_PORT=3457 NODE_ENV=production npx playwright test --workers=4` — 16 з 16 (десктоп і iPhone 13): заголовки, FAQ, помилки форми, успішна заявка, збій надсилання з номером для дзвінка, підсторінки, посилання сторів, axe без critical/serious, sitemap. Production-збірка пройшла.
+- Сторінку в прев'ю порівняно зі скріншотами прототипу на 1280 і 390; відмінності — у [README дизайну](../../design/2026-11-10-landing-relaunch/README.md).
+
+### Не перевірено
+- Справжню доставку в Telegram: потрібні токен бота й ID чату в `.env`.
+- GA4: немає ID ресурсу.
+- Живий сайт не оновлено: деплой робить Олексій; хостинг має запускати Node-сервер (`next start`), бо форма працює через `/api/lead`.
+
 ## Documentation impact
-`README.md`: посилання на цей spec, розділ «Content rules», оновлений «Known placeholders». Інших живих документів у репозиторії немає.
+`README.md`: опис продукту, змінні середовища, налаштування заявок у Telegram, аналітика й UTM, запуск тестів, бренд, оновлені заглушки. `.env.example` — нові змінні. Дизайн — `docs/design/2026-11-10-landing-relaunch/README.md`.

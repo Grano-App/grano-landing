@@ -15,12 +15,19 @@ Spec: [../../superpowers/specs/2026-11-10-landing-relaunch.md](../../superpowers
 
 ## Screens
 
-### Головна (прототип)
+### Головна
 
-- **Маршрут (лише dev):** `/__design/landing-relaunch/home?state=idle|invalid|sending|sent|error`. У production повертає 404, `robots: noindex`.
-- **Файли:** `app/%5F%5Fdesign/landing-relaunch/home/` — `page.tsx` (збірка й перемикач стану), `sections.tsx` (блоки), `lead-form.tsx` (форма), `fixtures.ts` (тексти з `copy.md`).
-- **Зображення:** `public/screens/cabinet/*.png` (кабінет; `machine-card` і `machine-overrun` обрізані до картки машини), `public/screens/app/*.png` (застосунок). Ці файли й підуть у продакшн на етапі 3.
+- **Реалізовано 2026-11-11** на `/` (етап 3). Прототип `/__design/landing-relaunch/home` видалено.
+- **Файли:** `app/page.tsx`; блоки `components/sections/{hero,pains,cycle,fuel,phone-feature,about,start,faq,lead-form}.tsx`; тексти `content/landing.ts`, `content/faq.ts`; заявка `lib/lead.ts` + `app/api/lead/route.ts`.
+- **Зображення:** `public/screens/cabinet/*.png` (кабінет; `machine-card` і `machine-overrun` обрізані до картки машини), `public/screens/app/*.png` (застосунок), `public/brands/*.png` (виробники).
 - **Порядок блоків:** шапка → перший екран + рядок довіри → «Знайома картина?» → повний цикл → техніка й пальне + датчики → поля й роботи → закупівля → Мокоша → хто за Grano → як почати (зі значками сторів) → питання → заявка → футер.
+
+**Свідомі відмінності реалізації від скріншотів прототипу:**
+
+- У блоці «Хто за Grano» замість назв у рамках — логотипи виробників з grano.in.ua на білих плитках.
+- Логотип Grano — справжній з grano.in.ua (на темному фоні — біла версія) замість тимчасового SVG «GRAN».
+- Під формою «Політики конфіденційності» — посилання на `/privacy`.
+- Стан форми визначає реальне надсилання на `/api/lead`, а не параметр `?state=`.
 
 ## States
 
@@ -48,9 +55,8 @@ Spec: [../../superpowers/specs/2026-11-10-landing-relaunch.md](../../superpowers
 
 ## Open questions
 
-- Логотипи виробників: потрібні файли (SVG/PNG) і дозвіл їх показувати. Поки — назви в рамках.
-- Логотип Grano у векторі: на сайті досі тимчасовий SVG «GRAN».
-- Telegram-бот і чат для заявок — потрібні до етапу 3.
+- Закрито 2026-11-11: логотипи виробників і Grano беремо з grano.in.ua (рішення Олексія); заявки йдуть через бота @grano_app_bot.
+- Векторний логотип Grano — коли дасть дизайнер; поки PNG 714×174.
 
 ## Acceptance criteria
 
@@ -65,10 +71,7 @@ Spec: [../../superpowers/specs/2026-11-10-landing-relaunch.md](../../superpowers
 
 ## Kit gaps
 
-- `BrowserFrame` — рамка браузера для скріншотів кабінету (зараз у `sections.tsx`).
-- `TextField`, `SelectField` — поля форми з підписом, помилкою й `aria-invalid` (зараз у `lead-form.tsx`).
-- `Button` не має стану `disabled`/`loading` — у прототипі імітовано класами.
-- Логотипи виробників — немає компонента й файлів.
+Закрито на етапі 3: `components/ui/browser-frame.tsx`, `components/ui/form-field.tsx` (`TextField`, `SelectField`), `components/ui/check-list.tsx`, `components/ui/section-title.tsx`; `Button` отримав `disabled`.
 
 ---
 
