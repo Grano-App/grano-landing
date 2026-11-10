@@ -146,5 +146,20 @@
 - Playwright e2e не запускав: `playwright.config.ts` збирає й піднімає сайт на `localhost:3000`, а цей порт зайнятий локальним бекендом `fs-back-end`. Тест FAQ оновлено під нове питання.
 - Живий сайт `grano-app.com` не оновлено: деплой робить Олексій.
 
+## 8. Етапи 1–2 — тексти й прототип, 2026-11-10
+
+### Changes
+- Тексти всіх блоків — [copy.md](../../design/2026-11-10-landing-relaunch/copy.md), погоджено: заголовок «Усе господарство в одній системі»; облік працює без закупівель у Grano; асортимент і ціни в застосунку як у менеджера й на grano.in.ua; менеджер дзвонить у найближчий робочий день; формулювання телематики.
+- Прототип нової головної: `/__design/landing-relaunch/home` (лише dev), файли `app/%5F%5Fdesign/landing-relaunch/home/`. Опис, стани, рішення, критерії приймання й прогалини кіту — [README.md](../../design/2026-11-10-landing-relaunch/README.md).
+- Зображення для нової сторінки: `public/screens/cabinet/*`, `public/screens/app/*`.
+
+### Verification
+- `npm run typecheck` — без помилок.
+- Прототип переглянуто в прев'ю на 1280 і 390, усі стани форми (`idle`, `invalid`, `sending`, `sent`, `error`); скріншоти — `docs/design/2026-11-10-landing-relaunch/screens/home-*`.
+
+### Не перевірено
+- `next build` не запускав: він перезаписує `.next` запущеного dev-сервера прев'ю. Що маршрут `/__design` у production віддає 404 — з коду (`notFound()` при `NODE_ENV=production`), не з білду.
+- Dev-сервер у цьому worktree не підхоплює зміни файлів без перезапуску прев'ю (`preview_start restart`).
+
 ## Documentation impact
 `README.md`: посилання на цей spec, розділ «Content rules», оновлений «Known placeholders». Інших живих документів у репозиторії немає.
