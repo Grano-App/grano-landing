@@ -7,7 +7,6 @@ export type Feature = {
   description: string;
   icon: LucideIcon;
   screenSrc: string;
-  comingSoon?: boolean;
 };
 
 export const features: Feature[] = [
@@ -15,7 +14,7 @@ export const features: Feature[] = [
     id: "fields",
     title: "Поля",
     description:
-      "Ведіть облік всіх своїх полів з культурами, сезонами та аналітикою врожайності.",
+      "Поля на карті з межами й площею, культури, посів, обробки й збирання з нагадуваннями.",
     icon: MapPinned,
     screenSrc: "/screens/fields-list.png",
   },
@@ -23,18 +22,17 @@ export const features: Feature[] = [
     id: "shop",
     title: "Магазин",
     description:
-      "Замовляйте насіння, добрива та засоби захисту напряму в додатку. Доставка Новою поштою або кур'єром.",
+      "Замовляйте насіння, добрива та засоби захисту напряму в додатку. Доставка Новою поштою, оплата онлайн або при отриманні.",
     icon: ShoppingBag,
     screenSrc: "/screens/shop-catalog.png",
   },
   {
     id: "ai",
-    title: "AI-діагностика",
+    title: "Діагностика за фото",
     description:
-      "Сфотографуйте листок — отримайте діагноз проблеми рослини і рекомендації.",
+      "Сфотографуйте рослину — застосунок допоможе визначити ознаки хвороби й підкаже, на що звернути увагу.",
     icon: Sparkles,
     screenSrc: "/screens/ai-result.png",
-    comingSoon: true,
   },
   {
     id: "weather",

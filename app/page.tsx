@@ -3,7 +3,6 @@ import { Hero } from "@/components/sections/hero";
 import { FeatureCards } from "@/components/sections/feature-cards";
 import { DeepDive } from "@/components/sections/deep-dive";
 import { HowItWorks } from "@/components/sections/how-it-works";
-import { SocialProof } from "@/components/sections/social-proof";
 import { FinalCta } from "@/components/sections/final-cta";
 import { Faq } from "@/components/sections/faq";
 import { Footer } from "@/components/sections/footer";
@@ -13,16 +12,11 @@ import { deepDives } from "@/content/deep-dives";
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MobileApplication",
-  name: "Grano",
+  name: "Grano Agro",
   operatingSystem: "iOS, Android",
-  applicationCategory: "LifestyleApplication",
+  applicationCategory: "BusinessApplication",
   description:
-    "Мобільний додаток для українських фермерів. Управляйте полями, діагностуйте хвороби рослин, замовляйте насіння.",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "UAH",
-  },
+    "Застосунок для українських господарств: поля на карті, облік операцій, діагностика рослин за фото, замовлення насіння й засобів захисту.",
 };
 
 export default function Home() {
@@ -42,8 +36,6 @@ export default function Home() {
         ))}
         <OrnDivider />
         <HowItWorks />
-        <OrnDivider />
-        <SocialProof />
         <FinalCta />
         <Faq />
       </main>

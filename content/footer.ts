@@ -11,16 +11,16 @@ export const footerColumns = [
     title: "Підтримка",
     links: [
       { label: "Центр підтримки", href: "/support" },
+      { label: "+380 66 797 50 07", href: "tel:+380667975007" },
       { label: "support@grano-app.com", href: "mailto:support@grano-app.com" },
     ],
   },
   {
     title: "Компанія",
     links: [
-      { label: "Про Grano", href: "/support#about" },
       { label: "grano.in.ua", href: "https://grano.in.ua", external: true },
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
+      { label: "Політика конфіденційності", href: "/privacy" },
+      { label: "Умови використання", href: "/terms" },
     ],
   },
 ] as const;

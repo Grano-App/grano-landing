@@ -41,11 +41,17 @@ Logo SVGs in `/public/brand/`. To update, edit the SVG files directly or replace
 
 - Design spec: [docs/superpowers/specs/2026-04-21-grano-landing-design.md](docs/superpowers/specs/2026-04-21-grano-landing-design.md)
 - Implementation plan: [docs/superpowers/plans/2026-04-22-grano-landing-implementation.md](docs/superpowers/plans/2026-04-22-grano-landing-implementation.md)
+- Relaunch (positioning, structure, stage 0 cleanup): [docs/superpowers/specs/2026-11-10-landing-relaunch.md](docs/superpowers/specs/2026-11-10-landing-relaunch.md)
+
+## Content rules
+
+Every claim on the site must exist in the current build (see the relaunch spec, §3.3). No invented testimonials, statistics or contacts. FaynoSoft is never mentioned publicly.
 
 ## Known placeholders (replace before launch)
 
 - `public/brand/logo.svg`, `public/brand/logo-dark.svg` — SVG traced from splash PNGs; letterforms are approximate. Replace with a precise SVG from the designer in Figma.
 - `public/store-badges/app-store.svg`, `public/store-badges/google-play.svg` — generic black pills. Download the official Ukrainian-localized badges from Apple/Google design guidelines.
 - `public/photos/hero-wheat-field.jpg` — currently a strawberries-on-straw Unsplash photo (blurred 40px so content is secondary). Replace with a wheat-field-at-sunset photo that matches brand tone.
-- `app/privacy/page.tsx`, `app/terms/page.tsx` — placeholder legal copy with warning banner. Swap in final text from Grano legal team.
+- `app/privacy/page.tsx`, `app/terms/page.tsx` — placeholder legal copy with warning banner. Final text comes from the Grano partner; it must cover machinery geodata from telematics.
+- `public/screens/*` — app screens from April 2026; `weather-card.png` duplicates `home.png`. Replace with screens from the current build.
 ```

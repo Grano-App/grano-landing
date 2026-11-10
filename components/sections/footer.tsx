@@ -46,9 +46,8 @@ export function Footer() {
           ))}
         </div>
         <OrnDivider tone="white" className="my-10" />
-        <div className="flex flex-col items-center justify-between gap-4 text-xs text-white/50 md:flex-row">
-          <div>© 2026 {site.company}. Всі права захищені.</div>
-          <div>Зроблено {site.developer}</div>
+        <div className="text-center text-xs text-white/50 md:text-left">
+          © 2026 {site.company}. Всі права захищені.
         </div>
       </Container>
     </footer>

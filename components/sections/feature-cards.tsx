@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
-import { Pill } from "@/components/ui/pill";
 import { features } from "@/content/features";
 
 export function FeatureCards() {
@@ -25,10 +24,7 @@ export function FeatureCards() {
                 className="group flex flex-col gap-4 rounded-card bg-white p-6 shadow-card transition-transform duration-200 hover:-translate-y-1 hover:shadow-mockup"
               >
                 <Icon className="h-12 w-12 text-green-700" aria-hidden="true" />
-                <div className="flex items-center gap-2">
-                  <h3 className="text-h4 font-bold text-navy-900">{f.title}</h3>
-                  {f.comingSoon && <Pill tone="warning">Скоро</Pill>}
-                </div>
+                <h3 className="text-h4 font-bold text-navy-900">{f.title}</h3>
                 <p className="text-sm text-navy-500">{f.description}</p>
                 <div className="relative mt-auto aspect-[10/16] overflow-hidden rounded-[12px] bg-cream-50">
                   <Image

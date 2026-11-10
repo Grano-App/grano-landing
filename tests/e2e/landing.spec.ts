@@ -12,11 +12,11 @@ test.describe("Grano landing", () => {
 
   test("FAQ accordion expands", async ({ page }) => {
     await page.goto("/");
-    const btn = page.getByRole("button", { name: /Чи додаток безкоштовний/ });
+    const btn = page.getByRole("button", { name: /Скільки коштує Grano/ });
     await expect(btn).toHaveAttribute("aria-expanded", "false");
     await btn.click();
     await expect(btn).toHaveAttribute("aria-expanded", "true");
-    await expect(page.getByText(/безкоштовний для всіх користувачів/)).toBeVisible();
+    await expect(page.getByText(/перший місяць користування — безкоштовні/)).toBeVisible();
   });
 
   test("sub-pages are reachable", async ({ page }) => {

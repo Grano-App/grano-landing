@@ -12,19 +12,19 @@ export const steps: Step[] = [
   {
     index: 1,
     title: "Завантажте Grano",
-    description: "Безкоштовно в App Store або Google Play.",
+    description: "В App Store або Google Play.",
     icon: Download,
   },
   {
     index: 2,
-    title: "Створіть аккаунт",
-    description: "Ім'я, телефон, email — і ви готові.",
+    title: "Створіть акаунт",
+    description: "Ім'я, телефон і пароль — і ви готові.",
     icon: UserPlus,
   },
   {
     index: 3,
     title: "Додайте поля і починайте",
-    description: "Grano візьме на себе облік, нагадування і аналітику.",
+    description: "Grano візьме на себе облік робіт і нагадування.",
     icon: Leaf,
   },
 ];

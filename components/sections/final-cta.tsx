@@ -20,7 +20,7 @@ export function FinalCta() {
           Grano — в твоєму телефоні
         </h2>
         <p className="text-lede text-white/70">
-          Усі модулі безкоштовні. Без реклами.
+          Реєстрація й перший місяць — безкоштовно.
         </p>
         <StoreBadges />
       </Container>

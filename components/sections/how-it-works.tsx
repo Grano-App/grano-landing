@@ -11,7 +11,7 @@ export function HowItWorks() {
             Як почати — три кроки
           </h2>
           <p className="mt-4 text-lede text-navy-500">
-            Менше 5 хвилин до повного налаштування господарства.
+            Завантажте, зареєструйтесь — і ваші поля в телефоні.
           </p>
         </div>
         <ol className="relative grid grid-cols-1 gap-10 md:grid-cols-3">

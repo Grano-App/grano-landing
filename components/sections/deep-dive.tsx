@@ -1,13 +1,12 @@
 import { Check } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
-import { Pill } from "@/components/ui/pill";
 import { IPhoneMockup } from "@/components/ui/iphone-mockup";
 import { cn } from "@/lib/cn";
 import type { DeepDive as DeepDiveData } from "@/content/deep-dives";
 
 export function DeepDive({ data }: { data: DeepDiveData }) {
-  const { mockupSide, bg, title, pill, lede, bullets, screenSrc, alt, disclaimer } = data;
+  const { mockupSide, bg, title, lede, bullets, screenSrc, alt } = data;
   const mockupFirst = mockupSide === "left";
   return (
     <Section id={data.id} bg={bg}>
@@ -17,10 +16,7 @@ export function DeepDive({ data }: { data: DeepDiveData }) {
             <IPhoneMockup src={screenSrc} alt={alt} />
           </div>
           <div className={cn("flex flex-col gap-6", mockupFirst ? "md:order-2" : "md:order-1")}>
-            <div className="flex flex-wrap items-center gap-3">
-              <h3 className="font-display text-h3 font-bold text-navy-900">{title}</h3>
-              {pill && <Pill tone="warning">{pill}</Pill>}
-            </div>
+            <h3 className="font-display text-h3 font-bold text-navy-900">{title}</h3>
             <p className="text-lede text-navy-700">{lede}</p>
             <ul className="flex flex-col gap-3">
               {bullets.map((b) => (
@@ -30,9 +26,6 @@ export function DeepDive({ data }: { data: DeepDiveData }) {
                 </li>
               ))}
             </ul>
-            {disclaimer && (
-              <p className="text-xs text-navy-500">{disclaimer}</p>
-            )}
           </div>
         </div>
       </Container>
