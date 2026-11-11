@@ -1,26 +1,25 @@
+import { headerNav } from "./nav";
+import { site } from "./site";
+
 export const footerColumns = [
   {
     title: "Продукт",
-    links: [
-      { label: "Можливості", href: "#features" },
-      { label: "Як працює", href: "#how-it-works" },
-      { label: "FAQ", href: "#faq" },
-    ],
+    links: headerNav.map((n) => ({ label: n.label, href: n.href })),
   },
   {
     title: "Підтримка",
     links: [
       { label: "Центр підтримки", href: "/support" },
-      { label: "support@grano-app.com", href: "mailto:support@grano-app.com" },
+      { label: site.phone, href: site.phoneHref },
+      { label: site.email, href: `mailto:${site.email}` },
     ],
   },
   {
     title: "Компанія",
     links: [
-      { label: "Про Grano", href: "/support#about" },
-      { label: "grano.in.ua", href: "https://grano.in.ua", external: true },
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
+      { label: "grano.in.ua", href: site.mainSite, external: true },
+      { label: "Політика конфіденційності", href: "/privacy" },
+      { label: "Умови використання", href: "/terms" },
     ],
   },
-] as const;
+];

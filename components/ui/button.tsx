@@ -10,6 +10,7 @@ type ButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
   type?: "button" | "submit";
+  disabled?: boolean;
 };
 
 const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
@@ -36,7 +37,7 @@ export function Button({
   ...rest
 }: ButtonProps) {
   const cls = cn(
-    "inline-flex items-center justify-center rounded-pill font-bold transition-colors transition-transform duration-200 hover:scale-[1.02]",
+    "inline-flex items-center justify-center rounded-pill font-bold transition-colors transition-transform duration-200 hover:scale-[1.02] disabled:pointer-events-none disabled:opacity-70",
     variants[variant],
     sizes[size],
     className

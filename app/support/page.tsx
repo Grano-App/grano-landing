@@ -39,7 +39,6 @@ export default function SupportPage() {
               <a className="text-navy-900 underline" href={site.phoneHref}>
                 {site.phone}
               </a>
-              <span className="ml-2 text-xs text-navy-500">({site.supportHours})</span>
             </dd>
           </div>
         </dl>

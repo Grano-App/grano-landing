@@ -1,14 +1,15 @@
 export const site = {
   name: "Grano",
-  tagline: "Твій цифровий агроном",
+  title: "Grano — облік господарства: поля, техніка, пальне, закупівля",
+  tagline: "Облік господарства від агрофірми Grano",
+  description:
+    "Система для господарства від агрофірми Grano: поля й роботи в телефоні, техніка й пальне у веб-кабінеті, насіння й засоби захисту з доставкою. Перший місяць безкоштовно.",
   url: "https://grano-app.com",
   email: "support@grano-app.com",
-  phone: "+380 44 123 45 67",
-  phoneHref: "tel:+380441234567",
-  supportHours: "Пн–Пт 9:00–18:00",
-  appStoreUrl: "https://apps.apple.com/ua/app/grano/idTBD",
-  playStoreUrl: "https://play.google.com/store/apps/details?id=ua.grano.app",
+  phone: "+380 66 797 50 07",
+  phoneHref: "tel:+380667975007",
+  appStoreUrl: "https://apps.apple.com/ua/app/grano-agro/id6787681145",
+  playStoreUrl: "https://play.google.com/store/apps/details?id=grano.app.com",
   company: "ТОВ Грано",
-  developer: "Faynosoft",
   mainSite: "https://grano.in.ua",
 } as const;

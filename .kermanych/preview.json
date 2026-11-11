@@ -1,0 +1,10 @@
+{
+  "setup": "npm install --no-audit --no-fund --no-save",
+  "services": [
+    {
+      "name": "web",
+      "open": true,
+      "command": "npm run dev -- --port $PORT --hostname localhost"
+    }
+  ]
+}

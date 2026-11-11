@@ -4,17 +4,17 @@ import { site } from "@/content/site";
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: site.title,
     template: `%s — ${site.name}`,
   },
-  description:
-    "Мобільний додаток для українських фермерів. Управляйте полями, діагностуйте хвороби рослин, замовляйте насіння. Безкоштовно.",
+  description: site.description,
   keywords: [
-    "додаток для фермерів",
-    "цифровий агроном",
-    "управління полями",
-    "AI-діагностика рослин",
-    "магазин агрохімії",
+    "облік господарства",
+    "облік пального",
+    "облік техніки",
+    "датчики пального",
+    "облік полів",
+    "насіння й засоби захисту",
     "Grano",
   ],
   openGraph: {
@@ -22,15 +22,13 @@ export const defaultMetadata: Metadata = {
     locale: "uk_UA",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — ${site.tagline}`,
-    description:
-      "Мобільний додаток для українських фермерів. Управляйте полями, діагностуйте хвороби рослин, замовляйте насіння.",
+    title: site.title,
+    description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
-    description:
-      "Мобільний додаток для українських фермерів. Безкоштовно.",
+    title: site.title,
+    description: site.description,
   },
   robots: {
     index: true,
