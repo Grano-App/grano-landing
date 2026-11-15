@@ -23,7 +23,7 @@ export function Hero() {
         <div className="relative pb-12 lg:pr-10">
           <BrowserFrame {...hero.cabinet} priority sizes="(min-width: 1024px) 560px, 100vw" />
           <div className="absolute -bottom-4 right-0 hidden w-[130px] sm:block lg:w-[150px]">
-            <IPhoneMockup src={hero.phone.src} alt={hero.phone.alt} className="border-[6px]" />
+            <IPhoneMockup src={hero.phone.src} alt={hero.phone.alt} />
           </div>
           <p className="mt-3 text-xs text-navy-500">{demoLabel}</p>
         </div>
