@@ -56,6 +56,47 @@ test.describe("Grano landing", () => {
     await expect(playStore).toHaveAttribute("href", /play\.google\.com\/store\/apps\/details\?id=grano\.app\.com/);
   });
 
+  test("App Store and Google Play badges have the same width in every placement", async ({ page }) => {
+    await page.goto("/");
+    const widths = await page.locator('a[data-track="click_store"] img').evaluateAll((imgs) =>
+      imgs.map((img) => ({ label: img.closest("a")!.dataset.trackLabel!, width: img.getBoundingClientRect().width }))
+    );
+    for (const placement of ["start", "footer"]) {
+      const appStore = widths.find((w) => w.label === `app_store_${placement}`)!;
+      const playStore = widths.find((w) => w.label === `google_play_${placement}`)!;
+      expect(appStore.width).toBeGreaterThan(0);
+      expect(playStore.width).toBeCloseTo(appStore.width, 0);
+    }
+  });
+
+  test("every phone screenshot sits in the same iPhone frame", async ({ page }) => {
+    await page.goto("/");
+    // Рамка — дід скріншота в IPhoneMockup: відступ екрана й радіус кутів відносно ширини рамки мають збігатися всюди.
+    const frames = await page.locator('img[alt^="Застосунок:"]').evaluateAll((imgs) =>
+      imgs
+        .map((img) => ({ screen: img.parentElement!, frame: img.parentElement!.parentElement! }))
+        .filter(({ frame }) => frame.getBoundingClientRect().width > 0)
+        .map(({ screen, frame }) => {
+          const box = frame.getBoundingClientRect();
+          return {
+            inset: (screen.getBoundingClientRect().left - box.left) / box.width,
+            radius: parseFloat(getComputedStyle(frame).borderTopLeftRadius) / box.width,
+          };
+        })
+    );
+    expect(frames.length).toBeGreaterThan(1);
+    for (const frame of frames) {
+      expect(frame.inset).toBeCloseTo(frames[0].inset, 2);
+      expect(frame.radius).toBeCloseTo(frames[0].radius, 2);
+    }
+  });
+
+  test("footer logo keeps its proportions", async ({ page }) => {
+    await page.goto("/");
+    const box = await page.locator("footer").getByRole("img", { name: "Grano" }).boundingBox();
+    expect(box!.width / box!.height).toBeCloseTo(714 / 174, 1);
+  });
+
   test("homepage has no critical axe violations", async ({ page }) => {
     await page.goto("/");
     const results = await new AxeBuilder({ page })

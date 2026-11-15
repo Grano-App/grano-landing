@@ -22,7 +22,7 @@ export function Cycle() {
                 <h3 className="text-h4 font-bold text-navy-900">{i + 1}. {card.title}</h3>
                 <p className="text-base text-navy-700">{card.text}</p>
                 {i < cycle.cards.length - 1 && (
-                  <span className="absolute -right-[32px] top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-green-700 text-white shadow-lg ring-4 ring-cream lg:flex" aria-hidden="true">
+                  <span className="absolute -right-8 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-green-700 text-white shadow-lg ring-4 ring-white lg:flex" aria-hidden="true">
                     <ArrowRight className="h-5 w-5" />
                   </span>
                 )}

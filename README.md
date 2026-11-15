@@ -72,6 +72,7 @@ Every claim on the site must exist in the current build or be an approved releas
 
 - `public/brand/grano-logo.png` — Grano logo from grano.in.ua (for light backgrounds); `grano-logo-white.png` — the same artwork with white letters (for dark backgrounds).
 - `public/brands/*.png` — manufacturer logos from grano.in.ua for the «Хто за Grano» block.
+- `public/store-badges/app-store.svg`, `public/store-badges/google-play.svg` — official Apple and Google badges (English artwork). `components/ui/store-badges.tsx` renders both at the same width (160 px); Ukrainian-localized versions are on the Apple and Google badge guideline pages.
 
 ## Specs
 
@@ -82,6 +83,5 @@ Every claim on the site must exist in the current build or be an approved releas
 
 ## Known placeholders (replace before launch)
 
-- `public/store-badges/app-store.svg`, `public/store-badges/google-play.svg` — generic black pills. Download the official Ukrainian-localized badges from Apple/Google design guidelines.
 - `app/privacy/page.tsx`, `app/terms/page.tsx` — placeholder legal copy with warning banner. Final text comes from the Grano partner; it must cover machinery geodata from telematics and the lead form (name, phone, farm, oblast sent to Telegram).
 - Grano logo is a raster PNG; replace with a vector file when the designer provides one.

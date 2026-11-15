@@ -8,9 +8,10 @@ type Props = {
   className?: string;
 };
 
+/** Рамка iPhone для скріншотів застосунку. Пропорції рамки задані в `cqw`, тож телефон однаковий за будь-якої ширини. */
 export function IPhoneMockup({ src, alt, priority, className }: Props) {
   return (
-    <div className={cn("mx-auto w-full max-w-[320px] [container-type:inline-size]", className)}>
+    <div className={cn("@container mx-auto w-full max-w-[320px]", className)}>
       <div className="relative rounded-[14cqw] bg-navy-900 p-[3cqw] shadow-mockup">
         <div className="absolute left-1/2 top-[3cqw] z-10 h-[7cqw] w-[30cqw] -translate-x-1/2 rounded-full bg-navy-900" />
         <div className="overflow-hidden rounded-[11cqw] bg-white">
