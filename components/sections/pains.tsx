@@ -9,8 +9,16 @@ export function Pains() {
       <Container>
         <SectionTitle>{pains.title}</SectionTitle>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {pains.items.map((p) => (
-            <p key={p} className="rounded-card border border-gray-200 p-6 text-base text-navy-700">{p}</p>
+          {pains.items.map((p, i) => (
+            <div
+              key={p}
+              className="group flex h-full min-h-[140px] items-start gap-4 rounded-card border border-gray-200 bg-gray-50 p-6 transition duration-200 hover:-translate-y-1 hover:border-green-700 hover:bg-white hover:shadow-lg"
+            >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-700/10 font-display text-lg font-bold text-green-700 transition group-hover:bg-green-700 group-hover:text-white">
+                {i + 1}
+              </span>
+              <p className="text-base text-navy-700">{p}</p>
+            </div>
           ))}
         </div>
         <p className="mt-10 max-w-3xl text-lede font-bold text-navy-900">{pains.outro}</p>
