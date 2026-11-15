@@ -23,19 +23,23 @@ export function Hero() {
         <div className="relative pb-12 lg:pr-10">
           <BrowserFrame {...hero.cabinet} priority sizes="(min-width: 1024px) 560px, 100vw" />
           <div className="absolute -bottom-4 right-0 hidden w-[130px] sm:block lg:w-[150px]">
-            <IPhoneMockup src={hero.phone.src} alt={hero.phone.alt} className="border-[6px]" />
+            <IPhoneMockup src={hero.phone.src} alt={hero.phone.alt} />
           </div>
           <p className="mt-3 text-xs text-navy-500">{demoLabel}</p>
         </div>
       </Container>
-      <div className="border-t border-gray-200 bg-white">
-        <Container className="flex flex-col gap-3 py-6 text-sm font-bold text-navy-700 md:flex-row md:items-center md:justify-between">
-          {hero.trust.map((t) => (
-            <span key={t} className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-green-700" aria-hidden="true" />
-              {t}
-            </span>
-          ))}
+      <div className="bg-navy-900">
+        <Container>
+          <ul className="grid grid-cols-1 divide-y divide-white/15 py-2 md:grid-cols-3 md:divide-x md:divide-y-0 md:py-0">
+            {hero.trust.map((t) => (
+              <li key={t} className="flex items-center justify-center gap-3 px-4 py-5 text-base font-bold text-white md:py-7 md:text-lg">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-700" aria-hidden="true">
+                  <Check className="h-4 w-4 text-white" />
+                </span>
+                {t}
+              </li>
+            ))}
+          </ul>
         </Container>
       </div>
     </section>

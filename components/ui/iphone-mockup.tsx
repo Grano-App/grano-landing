@@ -8,24 +8,22 @@ type Props = {
   className?: string;
 };
 
+/** Рамка iPhone для скріншотів застосунку. Пропорції рамки задані в `cqw`, тож телефон однаковий за будь-якої ширини. */
 export function IPhoneMockup({ src, alt, priority, className }: Props) {
   return (
-    <div
-      className={cn(
-        "relative mx-auto w-full max-w-[320px] rounded-[44px] border-8 border-navy-900 bg-navy-900 shadow-mockup",
-        className
-      )}
-    >
-      <div className="absolute left-1/2 top-0 h-6 w-28 -translate-x-1/2 rounded-b-2xl bg-navy-900" />
-      <div className="overflow-hidden rounded-[36px] bg-white">
-        <Image
-          src={src}
-          alt={alt}
-          width={640}
-          height={1386}
-          priority={priority}
-          className="h-auto w-full"
-        />
+    <div className={cn("@container mx-auto w-full max-w-[320px]", className)}>
+      <div className="relative rounded-[14cqw] bg-navy-900 p-[3cqw] shadow-mockup">
+        <div className="absolute left-1/2 top-[3cqw] z-10 h-[7cqw] w-[30cqw] -translate-x-1/2 rounded-full bg-navy-900" />
+        <div className="overflow-hidden rounded-[11cqw] bg-white">
+          <Image
+            src={src}
+            alt={alt}
+            width={640}
+            height={1386}
+            priority={priority}
+            className="h-auto w-full"
+          />
+        </div>
       </div>
     </div>
   );
