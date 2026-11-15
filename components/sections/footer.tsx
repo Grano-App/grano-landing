@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="bg-navy-900 py-14 text-white">
       <Container className="grid grid-cols-1 gap-10 md:grid-cols-4">
         <div className="flex flex-col gap-4">
-          <Logo variant="dark" />
+          <Logo variant="dark" className="self-start" />
           <p className="text-sm text-white/60">{site.tagline}</p>
           <StoreBadges placement="footer" />
         </div>

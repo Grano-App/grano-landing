@@ -18,7 +18,7 @@ export function StoreBadges({ placement, className }: { placement: string; class
         data-track="click_store"
         data-track-label={`app_store_${placement}`}
       >
-        <Image src="/store-badges/app-store.svg" alt="App Store" width={160} height={52} className="h-12 w-auto" />
+        <Image src="/store-badges/app-store.svg" alt="App Store" width={120} height={40} className="h-12 w-auto" />
       </a>
       <a
         href={`${site.playStoreUrl}&referrer=${referrer}`}
@@ -28,7 +28,7 @@ export function StoreBadges({ placement, className }: { placement: string; class
         data-track="click_store"
         data-track-label={`google_play_${placement}`}
       >
-        <Image src="/store-badges/google-play.svg" alt="Google Play" width={180} height={52} className="h-12 w-auto" />
+        <Image src="/store-badges/google-play.svg" alt="Google Play" width={180} height={53} className="h-12 w-auto" />
       </a>
     </div>
   );
